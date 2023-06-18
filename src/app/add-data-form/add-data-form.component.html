@@ -1,0 +1,187 @@
+<div class="form-container form-con">
+  <h2>Add New Data</h2>
+  <form [formGroup]="dataForm" (submit)="saveData()">
+    <div class="form-row">
+      <div class="form-field">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+        <mat-error *ngIf="dataForm.get('name')?.hasError('required')">Name is required</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>Age</label>
+        <input type="number" formControlName="age">
+        <mat-error *ngIf="dataForm.get('age')?.hasError('required')">Age is required</mat-error>
+      </div>
+
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" formControlName="email">
+        <mat-error *ngIf="dataForm.get('email')?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="dataForm.get('email')?.hasError('email')">Please enter a valid email address</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>Contact Number</label>
+        <input type="tel" formControlName="contactNumber">
+        <mat-error *ngIf="dataForm.get('contactNumber')?.hasError('required')">Contact number is required</mat-error>
+        <mat-error *ngIf="dataForm.get('contactNumber')?.hasError('pattern')">Contact number should only contain
+          numeric
+          digits</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label>Address 1</label>
+      <input type="text" formControlName="address1">
+      <mat-error *ngIf="dataForm.get('address1')?.hasError('required')">Address 1 is required</mat-error>
+
+      <div class="form-field">
+        <label>Gender</label>
+        <input type="text" formControlName="gender">
+        <mat-error *ngIf="dataForm.get('gender')?.hasError('required')">Gender is required</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label>Address 2</label>
+      <input type="text" formControlName="address2">
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>Country</label>
+        <input type="text" formControlName="country">
+        <mat-error *ngIf="dataForm.get('country')?.hasError('required')">Country is required</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>State</label>
+        <input type="text" formControlName="state">
+        <mat-error *ngIf="dataForm.get('state')?.hasError('required')">State is required</mat-error>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>City</label>
+        <input type="text" formControlName="city">
+        <mat-error *ngIf="dataForm.get('city')?.hasError('required')">City is required</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>Pincode</label>
+        <input type="text" formControlName="pincode">
+        <mat-error *ngIf="dataForm.get('pincode')?.hasError('required')">Pincode is required</mat-error>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button color="warn" type="button" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+</div>
+<!-- <div class="form-container">
+  <h2>Add New Data</h2>
+  <form [formGroup]="dataForm" (submit)="saveData()">
+    <div class="form-row">
+      <div class="form-field">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+        <mat-error *ngIf="dataForm.get('name')?.invalid && dataForm.get('name')?.errors?.['required']">Name is
+          required</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>Age</label>
+        <input type="number" formControlName="age">
+        <mat-error *ngIf="dataForm.get('age')?.invalid && dataForm.get('age')?.errors?.['required']">Age is
+          required</mat-error>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" formControlName="email">
+        <mat-error *ngIf="dataForm.get('email')?.invalid && dataForm.get('email')?.errors?.['required']">Email is
+          required</mat-error>
+        <mat-error *ngIf="dataForm.get('email')?.invalid && dataForm.get('email')?.errors?.['required']">Please enter a
+          valid
+          email address</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>Contact Number</label>
+        <input type="tel" formControlName="contactNumber">
+        <mat-error
+          *ngIf="dataForm.get('contactNumber')?.invalid && dataForm.get('contactNumber')?.errors?.['required']">Contact
+          number is required</mat-error>
+        <mat-error
+          *ngIf="dataForm.get('contactNumber')?.invalid && dataForm.get('contactNumber')?.errors?.['pattern']">Contact
+          number should only contain numeric digits</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label>Address 1</label>
+      <input type="text" formControlName="address1">
+      <mat-error *ngIf="dataForm.get('address1')?.invalid && dataForm.get('address1')?.errors?.['required']">Address 1
+        is
+        required</mat-error>
+    </div>
+
+    <div class="form-field">
+      <label>Gender</label>
+      <input type="text" formControlName="gender">
+      <mat-error *ngIf="dataForm.get('gender')?.invalid && dataForm.get('gender')?.errors?.['required']">Gender is
+        required</mat-error>
+    </div>
+
+    <div class="form-field">
+      <label>Address 2</label>
+      <input type="text" formControlName="address2">
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>Country</label>
+        <input type="text" formControlName="country">
+        <mat-error *ngIf="dataForm.get('country')?.invalid && dataForm.get('country')?.errors?.['required']">Country is
+          required</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>State</label>
+        <input type="text" formControlName="state">
+        <mat-error *ngIf="dataForm.get('state')?.invalid && dataForm.get('state')?.errors?.['required']">State is
+          required</mat-error>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>City</label>
+        <input type="text" formControlName="city">
+        <mat-error *ngIf="dataForm.get('city')?.invalid && dataForm.get('city')?.errors?.['required']">City is
+          required</mat-error>
+      </div>
+
+      <div class="form-field">
+        <label>Pincode</label>
+        <input type="text" formControlName="pincode">
+        <mat-error *ngIf="dataForm.get('pincode')?.invalid && dataForm.get('pincode')?.errors?.['required']">Pincode is
+          required</mat-error>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button color="warn" type="button" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+</div> -->
