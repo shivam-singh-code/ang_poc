@@ -40,15 +40,15 @@ export class DataListComponent {
     this.isDialogOpen = true;
     const dialogRef = this.dialog.open(AddDataFormComponent, {
       width: 'auto',
-      height: 'auto',
+      height: '700px',
       data: {
         mode: 'add',
       },
-      position: {
-        top: '5%',
-        left: '10%',
-        // transform: 'translate(-50%, -50%)',
-      },
+      // position: {
+      //   top: '5%',
+      //   left: '10%',
+      //   // transform: 'translate(-50%, -50%)',
+      // },
     });
 
     dialogRef.afterClosed().subscribe(() => {
@@ -65,17 +65,17 @@ export class DataListComponent {
     if (index > -1) {
       const dialogRef = this.dialog.open(AddDataFormComponent, {
         width: 'auto',
-        height: 'auto',
+        height: '700px',
         data: {
           mode: 'edit',
           index: index,
           data: data,
         },
-        position: {
-          top: '5%',
-          left: '10%',
-          // transform: 'translate(-50%, -50%)',
-        },
+        // position: {
+        //   top: '5%',
+        //   left: '10%',
+        //   // transform: 'translate(-50%, -50%)',
+        // },
       });
 
       dialogRef.afterClosed().subscribe(() => {
