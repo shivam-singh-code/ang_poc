@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [AppComponent, DataListComponent, AddDataFormComponent],
@@ -28,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatDialogModule,
     MatTableModule,
     MatIconModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

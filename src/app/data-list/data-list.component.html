@@ -2,10 +2,16 @@
   <button mat-raised-button color="primary" (click)="addNew()">ADD NEW</button>
 </div> -->
 
-<div class="header">
+<!-- <div class="header">
   <h2>List of Data</h2>
   <button mat-raised-button color="primary" (click)="addNew()">ADD NEW</button>
-</div>
+</div> -->
+
+<mat-toolbar color="accent">
+  <h2>List of Data</h2>
+  <span class="spacer"></span>
+  <button mat-raised-button color="primary" (click)="addNew()"> <mat-icon>add</mat-icon> ADD NEW</button>
+</mat-toolbar>
 
 <!-- <div class="overlay-panel" *ngIf="isDialogOpen"></div> -->
 
